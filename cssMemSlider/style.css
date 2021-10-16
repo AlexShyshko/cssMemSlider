@@ -25,44 +25,40 @@ input {
   width: fit-content;
   height: fit-content;
   align-self: flex-start;
+  top: -0.5vw;
+  position: relative;
 }
 
 label {
   cursor: pointer;
-  display: inline-block;
-  height: 8px;
-  position: relative;
-  width: 8px;
-  margin: 25px 12px 0 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3vw;
+  width: 3vw;
   border-radius: 50%;
   transition: background ease-in-out 0.5s;
 }
 
-label:after {
-  border: 2px solid gold;
-  content: " ";
+.span {
   display: block;
-  height: 12px;
-  left: -4px;
-  position: relative;
-  top: -4px;
-  width: 12px;
+  width: 30%;
+  height: 30%;
+  border: 3px solid #290075;
   border-radius: 50%;
+  background-color: transparent;
 }
 
-label:hover {
+label:hover .span {
+  transition: 500ms;
   background: rgba(255, 217, 0, 0.521);
 }
 
-label:active,
-#slide1:checked ~ .text-controls .controls label:nth-of-type(1):hover,
-#slide2:checked ~ .text-controls .controls label:nth-of-type(2):hover,
-#slide3:checked ~ .text-controls .controls label:nth-of-type(3):hover,
-#slide4:checked ~ .text-controls .controls label:nth-of-type(4):hover,
-#slide1:checked ~ .text-controls .controls label:nth-of-type(1),
-#slide2:checked ~ .text-controls .controls label:nth-of-type(2),
-#slide3:checked ~ .text-controls .controls label:nth-of-type(3),
-#slide4:checked ~ .text-controls .controls label:nth-of-type(4) {
+label:active .span,
+#slide1:checked ~ .text-controls .controls label:nth-of-type(1) .span,
+#slide2:checked ~ .text-controls .controls label:nth-of-type(2) .span,
+#slide3:checked ~ .text-controls .controls label:nth-of-type(3) .span,
+#slide4:checked ~ .text-controls .controls label:nth-of-type(4) .span {
   transition: none;
   background: gold;
 }
