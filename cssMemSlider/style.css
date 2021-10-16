@@ -39,7 +39,7 @@ label {
 }
 
 label:after {
-  border: 2px solid #ddd;
+  border: 2px solid gold;
   content: " ";
   display: block;
   height: 12px;
@@ -50,12 +50,21 @@ label:after {
   border-radius: 50%;
 }
 
-label:hover,
+label:hover {
+  background: rgba(255, 217, 0, 0.521);
+}
+
+label:active,
+#slide1:checked ~ .text-controls .controls label:nth-of-type(1):hover,
+#slide2:checked ~ .text-controls .controls label:nth-of-type(2):hover,
+#slide3:checked ~ .text-controls .controls label:nth-of-type(3):hover,
+#slide4:checked ~ .text-controls .controls label:nth-of-type(4):hover,
 #slide1:checked ~ .text-controls .controls label:nth-of-type(1),
 #slide2:checked ~ .text-controls .controls label:nth-of-type(2),
 #slide3:checked ~ .text-controls .controls label:nth-of-type(3),
 #slide4:checked ~ .text-controls .controls label:nth-of-type(4) {
-  background: #ddd;
+  transition: none;
+  background: gold;
 }
 
 .text-controls {
@@ -67,8 +76,8 @@ label:hover,
 
 .slider {
   margin-top: 3vw;
-  width: calc(15vw + 200px);
-  height: calc(15vw + 200px);
+  width: calc(20vw + 200px);
+  height: calc(20vw + 200px);
   overflow: hidden;
 }
 
@@ -125,6 +134,7 @@ label:hover,
 .text p {
   margin: 0;
   height: inherit;
+  color: gold;
 }
 
 .text {
@@ -165,4 +175,38 @@ label:hover,
 #slide4:checked ~ .text-controls .text-container .text4 {
   z-index: 1;
   transform: translateY(-300%);
+}
+
+@media (max-width: 1024px) {
+  .slider {
+    width: calc(35vw + 200px);
+    height: calc(35vw + 200px);
+  }
+
+  .text-controls {
+    flex-direction: column-reverse;
+  }
+
+  .controls {
+    align-self: center;
+    margin-bottom: 3vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .slider {
+    width: calc(40vw + 100px);
+    height: calc(40vw + 100px);
+  }
+
+  .text {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .slider {
+    width: calc(45vw + 50px);
+    height: calc(45vw + 50px);
+  }
 }
